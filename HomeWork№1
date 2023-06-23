@@ -1,0 +1,3 @@
+var quantity = prompt("Ведите количество товара");
+var price = prompt("Введите цену товара");
+alert("Полная сумма: "+ quantity*price)
