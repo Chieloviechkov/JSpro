@@ -1,3 +1,21 @@
-var quantity = prompt("Ведите количество товара");
-var price = prompt("Введите цену товара");
+// Задание первое
+let quantity = prompt("Ведите количество товара");
+let price = prompt("Введите цену товара");
 alert("Полная сумма: "+ quantity*price)
+// Задание второе
+let quantity = prompt("Введите цену покупки");
+let summ = quantity-(quantity*0.1);
+alert(summ);
+// Задание третье
+let array = [
+    parseInt(prompt("Введите первое число")),
+    parseInt(prompt("Введите второе число")),
+    parseInt(prompt("Введите третье число")),
+    parseInt(prompt("Введите четвёртое число"))
+  ];
+let summ = 0;
+for(let i = 0; i < array.length; i++){
+    summ +=array[i];
+}
+const total = summ/array.length;
+alert ("Среднее арифметическое число: " + total);
