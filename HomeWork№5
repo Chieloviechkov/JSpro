@@ -1,0 +1,38 @@
+// Task 1
+function filmMaker(title, year, rating) {
+    this.title = title;
+    this.year = year;
+    this.rating = rating;
+  }
+  
+  let theShawshankRedemption = new filmMaker("The Shawshank Redemption", 1994, 9.11);
+// Task 2
+  filmMaker.prototype.giveInfo=function(){
+    console.log(`Назва фільму - ${this.title}, рік випуску - ${this.year}, рейтинг на HDrezka ${this.rating}`);
+}
+theShawshankRedemption.giveInfo();
+// Task 3
+let theGreenMile = new filmMaker("The Green Mile", 1999, 9.07);
+let forrestGamp = new filmMaker("Forrest Gamp", 1994, 8.92);
+let OnePlusOne = new filmMaker("1+1", 2011, 8.81);
+let theCuriousCaseofBenjaminButton = new filmMaker("The Curious Case of Benjamin Button", 2009, 8.06);
+let theProfessional = new filmMaker("Leon", 1994, 8.67);
+
+const films = [theGreenMile,forrestGamp,OnePlusOne,theCuriousCaseofBenjaminButton,theProfessional];
+
+function sortPopular(array){
+    array.sort(function(a, b) {
+    return b.rating - a.rating;
+  });
+}
+
+sortPopular(films);
+console.log(films);
+// Task 4
+function sortYear(array, year){
+    return array.filter(function(films){
+        return films.year === year;
+    });
+}
+let filmSort = sortYear(films, 1994);
+console.log(filmSort);
