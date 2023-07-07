@@ -1,0 +1,42 @@
+// Task 1
+let login = prompt("Login");
+let password = prompt("Password");
+let correctLogin = login.toLowerCase();
+if(correctLogin=="admin" && password == "12345"){
+    alert("Вітаємо в системі");
+} else{
+    alert("Пароль чи логін не вірні")
+}
+// Task 2
+let age = prompt("Ваш вік?");
+let stop = false;
+age > 18 ? stop = true : stop = false;
+alert(stop);
+// Task 3
+let day = prompt("Який зараз день неділі?")
+switch(day.toLowerCase) {
+    case "Понеділок":
+        alert("Сьогодні " + day + " у вас заняття з курсу JavaPro");
+        break;
+    case "Вівторок":
+        alert("Сьогодні " + day + " у вас заняття з курсу FE Pro о 19:00");
+        break;
+    case "Середа":
+        alert("Сьогодні " + day + " у вас заняття з курсу JavaPro");
+        break;
+    case "Четверг":
+        alert("Сьогодні " + day + " у вас заняття з курсу FE Pro о 19:00");
+        break;
+    case "П`ятниця":
+        alert("Сьогодні " + day + " це означає що у нас вихідний!")
+        break;
+    case "Субота":
+        alert("Сьогодні " + day + " це означає що у нас вихідний!")
+        break;
+    case "Неділя":
+        alert("Сьогодні " + day + " це означає що у нас вихідний!")
+        break;
+    default: 
+        alert("Невірно введений день тижня.")
+        break;
+}
