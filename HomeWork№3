@@ -1,0 +1,71 @@
+// Task 1
+let array = [2,4,6,8,10,12,14,16,18,20];
+// Task 2
+let arrayTwo = ["Keep", "Remove", "Keep", "Remove", "Keep", "Keep", "Remove", "Remove"];
+for (let i = 0; i < arrayTwo.length; i++) {
+  if (arrayTwo[i] === "Remove") {
+    arrayTwo.splice(i, 1);
+    i--;
+  }
+}
+
+alert("[" + arrayTwo + "]");
+// Task 3
+let checkArr = [69, 96, -66, 77, 85, -85, 14, -20, 90, -36];
+for (let i = 0; i <= checkArr.length; i++) {
+    if (checkArr[i] < 0) {
+        checkArr[i] = 0;
+    }
+  }
+alert (checkArr);
+// Task 4
+let days = ["Понеділок", "Середа", "Неділя"];
+let plans = ["Урок 03", "Урок 04", "Вихідний"];
+
+for (let i = 0; i < days.length; i++) {
+  alert(`Сьогодні ${days[i]} у вас такі плани: ${plans[i]}`);
+}
+// Task 5
+let number = parseFloat(prompt("Значення 1"));
+let operation = prompt("Операція");
+let numberTwo = parseFloat(prompt("Значення 2"));
+let result;
+switch(operation){
+    case "+":
+        result = number + numberTwo;
+        alert(result);
+        break;
+    case "-":
+        result = number - numberTwo;
+        alert(result);
+        break;
+    case "*":
+        result = number * numberTwo;
+        alert(result);
+        break;
+    case "%":
+        result = number % numberTwo;
+        alert(result);
+        break;
+    case "/":
+        result = number / numberTwo;
+        alert(result);
+        if(numberTwo == 0){
+            alert("На нуль ділити не можна!")
+        }
+        break;
+    case "**":
+        result = number ** numberTwo;
+        alert(result)
+        break;
+    case "Квадратний корінь":
+        result =  Math.sqrt(number);
+        let resultTwo =  Math.sqrt(numberTwo);
+        alert(result);
+        alert(resultTwo);
+        break;
+    default: 
+    alert("Некорректне значення");
+    break;
+}
+
