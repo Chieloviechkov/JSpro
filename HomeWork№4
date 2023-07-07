@@ -1,0 +1,27 @@
+// Task 1
+let array = ["cat","cow","fish","chicken","dog","pig"];
+function argument(type, array){
+    if(type === "first"){
+        return array[0];
+    } else if(type === "last"){
+        return array[array.length-1];
+    } else{
+        return null;
+    }
+}
+    let ElementFirst = argument("first", array);
+    let ElementLast = argument("last", array);
+
+    alert(ElementFirst + " " + ElementLast);
+// Task 2
+let smile = [':)', '=)',':)', '=)',':)', '=)']
+function argumentSmile(newSmile){
+    for (let i = 0; i < smile.length; i++) {
+        if (smile[i] === ':)') {
+            smile[i] = newSmile;
+        }
+    }
+}
+let newSmile = prompt("Введіть новий смайл");
+argumentSmile(newSmile);
+alert(smile);
