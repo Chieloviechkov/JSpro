@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Генератор дів з різним кольором</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <input type="number" id="numOfBoxes" min="1" max="20" value="1">
+    <button onclick="generateBoxes()">Генерувати</button>
+    <div id="boxContainer"></div>
+  </div>
+
+  <script>
+    function generateBoxes() {
+      const boxContainer = document.getElementById("boxContainer");
+      boxContainer.innerHTML = "";
+
+      const numOfBoxes = parseInt(document.getElementById("numOfBoxes").value);
+
+      for (let i = 0; i < numOfBoxes; i++) {
+        const div = document.createElement("div");
+        div.classList.add("box");
+        div.style.backgroundColor = getRandomColor();
+        boxContainer.appendChild(div);
+      }
+    }
+
+    function getRandomColor() {
+      const hue = Math.floor(Math.random() * 360);
+      const saturation = Math.floor(Math.random() * 100);
+      const lightness = Math.floor(Math.random() * 100);
+      return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    }
+  </script>
+</body>
+</html>
