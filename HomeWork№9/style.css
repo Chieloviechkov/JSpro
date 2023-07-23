@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    background-image:url(img/nebula_7680x4320_tsc63.jpg);
+    background-size:cover;
+  }
+
+  .todo-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    cursor: pointer;
+  }
+  h2{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: rgb(0, 191, 255);
+  }
+  .custom-input{
+    background-color:rgba(0, 0, 0, 0);
+    border: none;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  input:focus{
+    background-color:  rgba(0, 191, 255, 0.084);
+    border: none;
+    border-radius: 0.5rem;
+    border:  rgba(0, 191, 255, 0.223);
+    box-shadow:  0 0 20px #009dff, 0 0 28px #00b3ff;
+    outline: none;
+  }
+  input::placeholder{
+    word-wrap: break-word;
+    color: rgb(0, 191, 255);
+    font-size: 1.4rem;
+  }
+
+  .custom-button{
+    background: none;
+    border: none;
+  }
+  .custom-icon{
+    margin-bottom: 1rem;
+    width: 3rem;
+  }
+  .custom-button:focus{
+    outline: none;
+    border: none;
+  }
+  .neon-text{
+    text-align: justify;
+    color: #009dff  ;
+    text-shadow:  0 0 20px #009dff, 0 0 28px #00b3ff;
+  }
+  @media screen and (max-width: 490px) {
+  .todo-container{
+    width: 75%;
+  }
+  }
