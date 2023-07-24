@@ -1,6 +1,18 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   
   let tasks = [];
+
+  // Проверка наличия сохраненных данных в Local Storage при загрузке страницы
+  const savedTasks = localStorage.getItem('tasks');
+  if (savedTasks) {
+    tasks = JSON.parse(savedTasks);
+  }
+
+  // Функция для сохранения данных в Local Storage
+  function saveTasksToLocalStorage() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
 
   function addTask() {
     const taskInput = document.getElementById("taskInput");
@@ -17,12 +29,18 @@ document.addEventListener("DOMContentLoaded", function () {
       renderTasks();
 
       taskInput.value = "";
+
+      // После добавления задачи сохраняем данные в Local Storage
+      saveTasksToLocalStorage();
     }
   }
 
   function deleteTask(index) {
     tasks.splice(index, 1);
     renderTasks();
+
+    // После удаления задачи сохраняем данные в Local Storage
+    saveTasksToLocalStorage();
   }
 
   function editTask(index) {
@@ -35,6 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     tasks[index].text = taskText;
     tasks[index].isEditing = false;
     renderTasks();
+
+    // После сохранения измененной задачи сохраняем данные в Local Storage
+    saveTasksToLocalStorage();
   }
 
   function renderTasks() {
@@ -45,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const li = document.createElement("li");
 
       if (task.isEditing) {
-        
         const editInput = document.createElement("input");
         editInput.type = "text";
         editInput.value = task.text;
@@ -57,10 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
         saveButton.addEventListener("click", () => saveTask(index));
         li.appendChild(saveButton);
       } else {
-       
         li.textContent = `${task.text} (Створено: ${task.createdAt})`;
 
-      
         const deleteButton = document.createElement("button");
         const deleteIcon = document.createElement("img");
         deleteIcon.src = "img/pngwing.com.png";
