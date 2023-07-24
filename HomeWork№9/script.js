@@ -3,13 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
   let tasks = [];
 
-  // Проверка наличия сохраненных данных в Local Storage при загрузке страницы
   const savedTasks = localStorage.getItem('tasks');
   if (savedTasks) {
     tasks = JSON.parse(savedTasks);
   }
 
-  // Функция для сохранения данных в Local Storage
   function saveTasksToLocalStorage() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       taskInput.value = "";
 
-      // После добавления задачи сохраняем данные в Local Storage
       saveTasksToLocalStorage();
     }
   }
@@ -39,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tasks.splice(index, 1);
     renderTasks();
 
-    // После удаления задачи сохраняем данные в Local Storage
     saveTasksToLocalStorage();
   }
 
@@ -54,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tasks[index].isEditing = false;
     renderTasks();
 
-    // После сохранения измененной задачи сохраняем данные в Local Storage
     saveTasksToLocalStorage();
   }
 
