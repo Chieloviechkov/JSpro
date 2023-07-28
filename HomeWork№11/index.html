@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма з валідацією</title>
+</head>
+<body>
+  <h2>Форма з валідацією</h2>
+  
+  <form id="myForm">
+    <label for="nickname">Нікнейм (мінімум 2 літери, без цифр):</label>
+    <input type="text" id="nickname" name="nickname" required pattern="[A-Za-z]{2,}">
+    <br>
+
+    <label for="email">Емейл:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+
+    <label for="phone">Телефон (+380...):</label>
+    <input type="tel" id="phone" name="phone" required pattern="\+380\d{9}">
+    <br>
+
+    <button type="submit" id="submitBtn" disabled>Відправити</button>
+  </form>
+
+<script src="js.js"></script>
+</body>
+</html>
