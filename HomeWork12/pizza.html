@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Форма замовлення піци</title>
+  <script src="pizzaJS.js"></script>
+  <link rel="stylesheet" href="style.css"></head>
+<body>
+    <div>
+        
+  <h1>Замовлення піци</h1>
+
+  <form id="pizzaForm">
+    <label for="size">Розмір:</label>
+    <select id="size" name="size">
+      <option value="small">Мала</option>
+      <option value="medium">Середня</option>
+      <option value="large">Велика</option>
+    </select>
+    <br>
+
+    <label>Топінги:</label>
+    <input type="checkbox" name="topping" value="mushrooms"> Гриби
+    <input type="checkbox" name="topping" value="sausage"> Ковбаса
+    <input type="checkbox" name="topping" value="meat"> М'ясо
+    <input type="checkbox" name="topping" value="pineapple"> Ананаси
+    <br>
+
+    <label>Кількість:</label>
+    <input type="number" name="quantity" value="1" min="1">
+    <br>
+
+    <div id="additionalFields">
+    </div>
+
+    <button type="submit">Замовити</button>
+    </form>
+
+  <p>Ціна: <span id="price">0</span> грн</p>
+
+  <h2>Замовлена піца:</h2>
+  <div id="orderDetails"></div>   
+  <button type="button" id="resetBtn">Скинути</button>
+
+
+
+</div>
+
+</body>
+</html>
